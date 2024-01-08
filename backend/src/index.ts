@@ -7,13 +7,13 @@ import UserRoutes from "./routes/user.routes";
 import AuthRoutes from "./routes/auth.routes";
 import path from "path";
 
-mongoose.connect(process.env.MONGODB_CONNECT_DEVELOPMENT_URI as string); // just console that, for check e2e db test for automated connection
-// .then(() =>
-//   console.log(
-//     "Connected to database",
-//     process.env.MONGODB_CONNECT_DEVELOPMENT_URI
-//   )
-// );
+mongoose.connect(process.env.MONGODB_CONNECT_DEVELOPMENT_URI as string) // just console that, for check e2e db test for automated connection
+.then(() =>
+  console.log(
+    "Connected to database",
+    process.env.MONGODB_CONNECT_DEVELOPMENT_URI
+  )
+);
 
 const app = express();
 app.use(cookieParser());
