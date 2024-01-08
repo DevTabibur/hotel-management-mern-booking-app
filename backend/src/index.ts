@@ -26,7 +26,7 @@ app.use(
   })
 );
 
-// to server static files
+// to server static files e.g front end project
 app.use(express.static(path.join(__dirname, "../../frontend/dist")));
 
 // all api's
