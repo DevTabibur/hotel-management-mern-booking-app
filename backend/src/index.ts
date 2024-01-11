@@ -19,6 +19,13 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+
+// Check if the MongoDB connection URI is defined
+if (!process.env.MONGODB_CONNECTION_STRING) {
+  throw new Error('MongoDB connection URI is not defined.');
+}
+
+
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING as string);
 
 const app = express();
